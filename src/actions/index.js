@@ -10,12 +10,10 @@ export const fetchWeather = (city) => {
   const url = `${ROOT_URL}&q=${city},us`;
   const request = axios.get(url);
 
-  console.log('Request from action creator: ');
-  console.log(request);
-  
-  // Redux Promise middleware will look at payload property.
-  // If it is a promise, it will stop the action from hitting the reducer until
-  // the promise is resolved/rejected.
+  // Redux Promise middleware will look at the payload property.
+  // If it is a promise, it will stop the action from hitting the reducer.
+  // Once the promise is resolved/rejected, it dispatches a new action with the payload
+  // of the resolved promise
   return {
     type: FETCH_WEATHER,
     payload: request

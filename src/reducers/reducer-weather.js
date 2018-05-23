@@ -1,5 +1,9 @@
-export default (state = null, action) => {
-  console.log('Action payload from reducer:');
-  console.log(action);
+import { FETCH_WEATHER } from '../actions';
+
+export default (state = [], action) => {
+  switch(action.type){
+    case FETCH_WEATHER:
+      return [ action.payload.data, ...state ];
+  }
   return state;
 }
