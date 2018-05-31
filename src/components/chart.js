@@ -6,7 +6,7 @@ const average = arr => (arr.reduce((a,b) => a + b)/arr.length);
 export default ({ data, color, units }) => {
   return (
     <div>
-      <Sparklines data={data} height={120} width={180} preserveAspectRatio={2}>
+      <Sparklines data={data} height={120} width={180}>
         <SparklinesLine color={color} />
         <SparklinesReferenceLine type="avg" />
       </Sparklines>
